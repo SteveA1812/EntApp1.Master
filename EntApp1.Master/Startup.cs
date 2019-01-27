@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EntApp1.Master
+namespace EntApp1
 {
     public class Startup
     {
@@ -24,10 +24,10 @@ namespace EntApp1.Master
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello Sligo, from Stephen!");
             });
         }
     }
