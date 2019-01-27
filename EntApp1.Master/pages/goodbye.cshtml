@@ -5,7 +5,13 @@
 }
 
 <!DOCTYPE html>
-
+@{
+    var txt = "";
+    if (DateTime.Now.Hour > 12)
+    { txt = "Good Evening"; }
+    else
+    { txt = "Good Morning"; }
+}
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,5 +19,12 @@
 </head>
 <body>
     <h1> Goodbye from the goodbye.cshml file </h1>
+
+
+    <p> @txt</p>
+    <div>
+        The time now is @DateTime.Now.Hour:@DateTime.Now.Minute
+    </div>
+
 </body>
 </html>
