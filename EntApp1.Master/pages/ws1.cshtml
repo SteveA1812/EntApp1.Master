@@ -1,0 +1,31 @@
+﻿@page
+@model EntApp1.Master.pages.ws1Model
+@{
+
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ws1</title>
+</head>
+<body>
+ 
+    <ul>
+        @foreach (string country in @Model.MyTestArray)
+        {
+            <li >@country</li>
+
+        }
+    </ul>
+
+    <form method="post" style="border:1px solid blue; border-radius:2px 3px; width:400px">
+        Enter Your Name: <input type="text" id="firstname" name="First Name"><button type="submit">Press Here</button>
+        @Html.AntiForgeryToken();
+        <h1> @Model.Message </h1>
+    </form>
+
+
+ 
+
+</body>
+</html>
