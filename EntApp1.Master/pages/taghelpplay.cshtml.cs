@@ -14,23 +14,9 @@ namespace EntApp1.Master.pages
         }
         public string Message { get; set; }
         [BindProperty]
-        public int Number1 { get; set; }
+        public DateTime Number1 { get; set; }
 
-        [BindProperty]
-        public int? Number2 { get; set; }
-
-        [BindProperty]
-        public double Number3 { get; set; }
-        [BindProperty]
-        public double? Number4 { get; set; }
-        [BindProperty]
-        public decimal Number5 { get; set; }
-        [BindProperty]
-        public decimal? Number6 { get; set; }
-        [BindProperty]
-        public float Number7 { get; set; }
-        [BindProperty]
-        public float? Number8 { get; set; }
+       
       
 
 
