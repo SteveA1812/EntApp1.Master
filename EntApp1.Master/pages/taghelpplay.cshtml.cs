@@ -14,7 +14,7 @@ namespace EntApp1.Master.pages
         }
         public string Message { get; set; }
         [BindProperty]
-        public DateTime Number1 { get; set; }
+        public DateTime? Number1 { get; set; }
 
        
       
