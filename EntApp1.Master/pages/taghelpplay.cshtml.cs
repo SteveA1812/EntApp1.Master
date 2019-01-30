@@ -18,7 +18,8 @@ namespace EntApp1.Master.pages
         [BindProperty]
         public bool IsContactAllowed { get; set; }
 
-
+        [BindProperty]
+        public string Season{ get; set; }
 
 
 
@@ -29,9 +30,15 @@ namespace EntApp1.Master.pages
 
         public void OnPost()
         {
-            Message =
-                   $"{Number1}";
+           if(Season=="Winter")
+            { Message = "You have chosen Winter"; }
 
+           else if (Season == "Spring")
+            { Message = "You have chosen Spring"; }
+            else if (Season == "Summer")
+            { Message = "You have chosen Summer"; }
+            else  
+            { Message = "You have chosen Autumn"; }
         }
     }
 }

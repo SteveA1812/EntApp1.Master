@@ -15,17 +15,29 @@
 <body>
 
 
+   
     <form action="/" method="post">
-        <label asp-for=Number1>    </label>
-        <input asp-for=Number1 />
-
+        <label for="Winter">
+            <input value="Winter" id="Winter" type="radio" asp-for="Season" />
+            Winter
+        </label>
+        <label for="Spring">
+            <input value="Spring" id="Spring" type="radio" asp-for="Season" />
+            Spring
+        </label>
+        <label for="Summer">
+            <input value="Summer" id="Summer" type="radio" asp-for="Season" />
+            Summer
+        </label>
+        <label for="Autumn">
+            <input value="Autumn" id="Autumn" type="radio" asp-for="Season" />
+            Autumn
+        </label>
+        <button id="2"  onclick="OnPost()">Submit</button>
+        @Html.AntiForgeryToken();
+        <h1>@Model.Message</h1>
+       
     </form>
-    <form action="/" method="post">
-        <label asp-for=IsContactAllowed>    </label>
-        <input asp-for=IsContactAllowed />
-
-    </form>
-
 
 </body>
    
