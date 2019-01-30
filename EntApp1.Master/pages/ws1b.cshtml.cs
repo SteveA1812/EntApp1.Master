@@ -40,7 +40,7 @@ namespace EntApp1.Master.pages
             var choice = Request.Form["Answer"];
 
 
-            if (choice == "add")
+            if (choice == "Add")
             {
                 int answer = N3 + N4;
 

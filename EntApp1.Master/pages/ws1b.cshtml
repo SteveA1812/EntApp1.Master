@@ -23,47 +23,62 @@
     </form>
 
     <h1>Task 4</h1>
-    <p>
-        Enter two numbers, select a math, then click the button.<br>
-        The answer will be shown below.
-    </p>
-    <form method="post" style="border:1px solid blue; border-radius:2px 3px; width:400px">
-        Enter Number 1: <input type="text" name="Number3">
-        <br>
-        Enter Number 2: <input type="text" name="Number4">
-        <br>
-        <div>
-            <label>
-                @Html.RadioButton("Answer", "Add")
-                Add
-            </label>
-        </div>
-        <div>
-            <label>
-                @Html.RadioButton("Answer", "Subtract")
-                Subtract
-            </label>
-        </div>
-        <div>
-            <label>
-                @Html.RadioButton("Answer", "Multiply")
-                Multiply
-            </label>
-        </div>
-        <div>
-            <label>
-                @Html.RadioButton("Answer", "Divide")
-                Divide
-            </label>
-        </div>
-        <button type="submit" onclick="GetChoceCalc()"></button>
+    <div>
+        <p>
+            Enter two numbers, select a math, then click the button.<br>
+            The answer will be shown below.
+        </p>
+        <form>
+            1st number: <input type="text" name="number1" id='number1'>
+            2nd number: <input type="text" name="number2" id='number2'>
+            <br>
+            <input type="radio" name="button" id='add'>Add <br>
+            <input type="radio" name="button" id='substract'>Subtract <br>
+            <input type="radio" name="button" id='multiply'>Multiply <br>
+            <input type="radio" name="button" id='division'>Division <br>
+            <input type="button" name="calc" onclick="calculate()" value="Calculate"> <br>
+        </form>
+        <p id="math_res"></p>
+    </div>
 
-        @Html.AntiForgeryToken()
-        <h1> @Model.Message1 </h1>
-    </form>
+    <script>
+        function calculate() {
+            //Obtaining the references to the text inputs
+            var number1 = parseInt(document.getElementById('number1').value);
+            var number2 = parseInt(document.getElementById('number2').value);
 
+            //Reference of the result Box
+            var resultBox = document.getElementById('math_res');
+            resultBox.innerHTML = '';
 
+            //Reference of the radio buttons
+            var buttonAdd = document.getElementById('add');
+            var buttonSubstract = document.getElementById('substract');
+            var buttonMultiply = document.getElementById('multiply');
+            var buttonDivision = document.getElementById('division');
 
+            //Make the magic
+            if (buttonAdd.checked == true) {
+                resultBox.innerHTML = number1 + number2
+            }
+            else {
+                if (buttonSubstract.checked == true) {
+                    resultBox.innerHTML = number1 - number2
+                }
+                else {
+                    if (buttonMultiply.checked == true) {
+                        resultBox.innerHTML = number1 * number2
+                    }
+                    else {
+                        if (buttonDivision.checked == true) {
+                            resultBox.innerHTML = number1 / number2
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
 
 </body>
 </html>
